@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" viewBox="0 0 40 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #668552;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Notes" class="cls-1" d="M528,1062v-50h28.456L568,1022.86V1062H528Zm29.945-45v5h4.739Zm6.006,8.87h-9.983v-9.93H531.975v42.05h31.976v-32.12Zm-4,18.1H535.9V1040h24.05v3.97Zm0.072,7.97H536.048v-3.97h23.978v3.97Zm-24.05-19.96h24.05v3.97h-24.05v-3.97Zm0-8.02H550v4.02H535.976v-4.02Z" transform="translate(-528 -1012)"/>
+</svg>

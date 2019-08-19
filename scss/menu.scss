@@ -1,0 +1,17 @@
+.col-1 {
+    width: 60px;
+    background-image: url("../img/menu-base.png");
+
+    & .menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        & img {
+            width: 30px;
+            height: 30px;
+            margin: 11px 15px;
+        }
+
+    }
+}

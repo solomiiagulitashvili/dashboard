@@ -1,0 +1,27 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+@import "header.scss";
+@import "typography.scss";
+@import "menu.scss";
+@import "col-2.scss";
+
+.main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.col-2 {
+    width: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: #f6f6f6;
+}
+
+.main {
+     min-height: calc(100vh - 60px);
+}

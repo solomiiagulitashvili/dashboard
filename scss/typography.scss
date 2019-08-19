@@ -1,0 +1,78 @@
+header { 
+    font-family: Avenir LT Std, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #8b929d;
+    
+
+    a {
+        font-family: Avenir LT Std, sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: #8b929d;
+        
+        text-decoration: none;
+
+        &:hover {
+         color: #ced3da;
+        }
+    }
+    & input {
+        color: #6e747d;
+        font-size: 16px;
+    }
+
+    & p {
+        font-size: 12px;
+    }
+}
+
+.col-2 {
+    font-family: Avenir LT Std, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #6e747d;
+
+    & .h1 {
+        font-size: 14px;
+    }
+   
+    & span {
+            font-size: 22px;
+            color: #5e636b;
+            line-height: 22px;
+    }
+    & p {
+        color: #a5abb3;
+        margin: 0;
+    }
+
+    & .h2 {
+        font-size: 14px;
+    }
+    & select {
+        font-size: 11px;
+        color: #9e9e9e;
+    }
+
+    & .wrapper-item {
+        & h3 {
+            font-size: 12px;
+            line-height: 14px;
+        }
+        & p {
+            font-size: 10px;
+            line-height: 12px;
+        }
+    }
+}
+.player-statistics p {
+    font-family: Avenir LT Std, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #6e747d;
+}
