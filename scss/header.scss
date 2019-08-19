@@ -24,6 +24,27 @@ header {
         width: 25px;
         height: 60px;
         margin: 0 17px 0 17px;
+        transition : {
+            property: transform;
+            duration: .2s;
+            timing-function: linear;
+        }
+        &-svg {
+            fill: #545c63;
+            fill-rule: evenodd;
+            transition : {
+                property: fill;
+                duration: .2s;
+                timing-function: linear;
+            }
+    
+        }
+        &:hover  {
+            transform: scale(1.3);
+            .logo-svg {
+                fill: lighten(#545c63, 20%);
+            }
+        }
         
     }
 }

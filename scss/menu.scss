@@ -1,16 +1,32 @@
 .col-1 {
     width: 60px;
-    background-image: url("../img/menu-base.png");
+    background-color: #a0c370;
 
     & .menu {
         list-style: none;
         margin: 0;
         padding: 0;
 
-        & img {
+        & svg {
             width: 30px;
             height: 30px;
             margin: 11px 15px;
+           
+            & .cls-1 {
+                fill: #668552;
+                fill-rule: evenodd;
+                transition : {
+                    property: fill;
+                    duration: .2s;
+                    timing-function: linear;
+                }
+            
+               
+              }
+
+            &:hover path, &.active path  {
+                fill: darken(#668552, 20%);
+            }
         }
 
     }
