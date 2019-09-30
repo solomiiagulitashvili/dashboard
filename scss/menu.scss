@@ -1,33 +1,32 @@
 .col-1 {
-    width: 60px;
-    background-color: #a0c370;
+  width: 60px;
+  background-color: #a0c370;
 
-    & .menu {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-        & svg {
-            width: 30px;
-            height: 30px;
-            margin: 11px 15px;
-           
-            & .cls-1 {
-                fill: #668552;
-                fill-rule: evenodd;
-                transition : {
-                    property: fill;
-                    duration: .2s;
-                    timing-function: linear;
-                }
-            
-               
-              }
+    svg {
+      width: 30px;
+      height: 30px;
+      margin: 11px 15px;
 
-            &:hover path, &.active path  {
-                fill: darken(#668552, 20%);
-            }
+      .cls-1 {
+        fill: #668552;
+        fill-rule: evenodd;
+        transition : {
+          property: fill;
+          duration: 0.2s;
+          timing-function: linear;
         }
+      }
 
+      &:hover path,
+      &:focus path,
+      &.active path {
+        fill: darken(#668552, 20%);
+      }
     }
+  }
 }
