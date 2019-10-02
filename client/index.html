@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
     <title>Document</title>
 
     <link rel="stylesheet" href="css/index.css" />
@@ -192,24 +193,24 @@
             <div class="wrapper-for-flex">
               <h2>Active Players</h2>
               <select>
-                <option>Daily</option>
-                <option>Yearly</option>
-                <option>Monthly</option>
+                <option value = 'daily'>Daily</option>
+                <option value = 'yearly'>Yearly</option>
+                <option value = 'monthly'>Monthly</option>
               </select>
             </div>
-            <!-- <img src="img/graph-1.png" /> -->
+            <div class="preloader"></div>
             <div id="chart-1" class='img' style="height: 320px;"></div>
           </section>
           <section class="active-tournaments">
             <div class="wrapper-for-flex">
               <h2>Active Tournaments</h2>
               <select>
-                <option>Monthly</option>
-                <option>Daily</option>
-                <option>Yearly</option>
+                <option value = 'monthly'>Monthly</option>
+                <option value = 'daily'>Daily</option>
+                <option value = 'yearly'>Yearly</option>
               </select>
             </div>
-            <!-- <img src="img/graph-2.png" /> -->
+            <div class="preloader"></div>
             <div id="chart-2" class='img' style="height: 320px;"></div>
           </section>
         </div>
@@ -222,89 +223,6 @@
             </div>
           </div>
           <ul class='players-list'>
-            <!-- <li>
-              <img src="img/avatar-1.jpg" />
-              <div class="wrapper-item">
-                <h3>Daryl Ginn</h3>
-                <p>United Kingdom</p>
-              </div>
-            </li>
-            <li>
-              <img src="img/avatar-2.jpg" />
-              <div class="wrapper-item">
-                <h3>Erik Henebratt</h3>
-                <p>Sweden</p>
-              </div>
-            </li>
-            <li>
-              <img src="img/avatar-3.jpg" />
-              <div class="wrapper-item">
-                <h3>Daryl Ginn</h3>
-                <p>United Kingdom</p>
-              </div>
-            </li>
-            <li>
-              <img src="img/avatar-4.jpg" />
-              <div class="wrapper-item">
-                <h3>John Mac</h3>
-                <p>United States</p>
-              </div>
-            </li>
-            <li>
-              <img src="img/avatar-5.jpg" />
-              <div class="wrapper-item">
-                <h3>Lindsay Scott</h3>
-                <p>South Africa</p>
-              </div>
-            </li>
-            <li>
-              <img src="img/avatar-6.jpg" />
-              <div class="wrapper-item">
-                <h3>John Mac</h3>
-                <p>United Kingdom</p>
-              </div>
-            </li>
-            <li>
-              <img src="img/avatar-7.jpg" />
-              <div class="wrapper-item">
-                <h3>Aaron Sananes</h3>
-                <p>United Kingdom</p>
-              </div>
-            </li>
-            <li>
-              <img src="img/avatar-8.jpg" />
-              <div class="wrapper-item">
-                <h3>Jimmy Mars</h3>
-                <p>Australia</p>
-              </div>
-            </li>
-          </ul>
-        </section>
-        <section class="player-statistics">
-          <div class="wrapper-for-flex">
-            <h2>Player Statistics</h2>
-            <div>
-              <button class="back"><img src="img/arrow-back.svg" /></button>
-              <button class="next"><img src="img/arrow-next.svg" /></button>
-            </div>
-          </div>
-          <ul>
-            <li>
-              <img src="img/new-players.png" />
-              <p>New Players</p>
-            </li>
-            <li>
-              <img src="img/revisited.png" />
-              <p class="revisited">Revisited</p>
-            </li>
-            <li>
-              <img src="img/commented.png" />
-              <p>Commented</p>
-            </li>
-            <li>
-              <img src="img/active-players.png" />
-              <p>Active Players</p>
-            </li> -->
           </ul>
         </section>
       </div>
@@ -329,15 +247,38 @@
       );
       //]]>
     </script> -->
-    <script src="scripts/scripts.js"></script>
-    <script src='scripts/data.js'></script>
+    
+    <script src="scripts/big-stats.js"></script>
+    <script src='scripts/data-players.js'></script>
     <script src='scripts/render-player.js'></script>
+
+    <script src='scripts/network.js'></script>
     <script src='scripts/charts.js'></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', { packages: ['corechart'] });
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(function() {
+        window.network.load(
+          function(transformedData) {
+            console.log(transformedData);
+            window.charts.drawPlayersChart(transformedData);
+            var preloader = document.querySelector('.active-players .preloader');
+            preloader.classList.add('hidden');
+          }, 'players', 'daily'
+        );
+        window.network.load(
+          function(transformedData) {
+            console.log(transformedData);
+            window.charts.drawTournamentsChart(transformedData);
+            var preloader = document.querySelector('.active-tournaments .preloader');
+            preloader.classList.add('hidden');
+          }, 'tournaments', 'monthly'
+        );
+      })
     </script>
+    <script src='scripts/select.js'></script>
+    
+    
      
   </body>
 </html>
