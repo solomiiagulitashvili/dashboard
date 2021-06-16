@@ -20,7 +20,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "http-proxy-middleware": "^0.20.0",
     "nodemon": "^1.19.3",
-    "postcss": "^7.0.17",
+    "postcss": "^7.0.36",
     "stylelint": "^10.1.0",
     "stylelint-a11y": "^1.2.1",
     "stylelint-config-sass-guidelines": "^6.0.0",
